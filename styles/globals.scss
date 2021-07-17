@@ -1,0 +1,25 @@
+/* Colors */
+
+$dark: #4B4B4B;
+$light: #F6F7EB;
+$site: #93827F;
+$green: #129490;
+
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Serif&family=Work+Sans&display=swap');
+
+$primary: 'Work Sans', sans-serif;
+$header: 'Noto Serif', serif;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

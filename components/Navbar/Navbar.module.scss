@@ -1,0 +1,23 @@
+@import "../../styles/globals.scss";
+
+.Container {
+    padding: 20px;
+    @include flex-between;
+}
+
+.Links {
+    @include flex-between;
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        opacity: 0.8;
+        transition: opacity .4s;
+    }
+
+    div {
+        padding: 20px;
+    }
+}
