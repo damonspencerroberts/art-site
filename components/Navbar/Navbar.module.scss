@@ -2,14 +2,14 @@
 
 .Container {
     @include flex-between;
-}
-
-.Links {
-    @include flex-between;
 
     a {
         text-decoration: none;
     }
+}
+
+.Links {
+    @include flex-between;
 
     a:hover {
         opacity: 0.8;

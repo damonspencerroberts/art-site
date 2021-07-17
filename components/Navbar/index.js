@@ -8,7 +8,11 @@ function Navbar(props) {
   return (
     <div className={styles.Container}>
       <div className={styles.Logo}>
-        <Header fontSize={36}>Clive Roberts</Header>
+        <Link href="/">
+          <a>
+            <Header fontSize={36}>Clive Roberts</Header>
+          </a>
+        </Link>
       </div>
       <div className={styles.Links}>
         <Link href="/portfolio">
@@ -23,7 +27,7 @@ function Navbar(props) {
         </Link>
         <Link href="/contact">
           <a>
-            <Header>Header</Header>
+            <Header>Contact</Header>
           </a>
         </Link>
       </div>

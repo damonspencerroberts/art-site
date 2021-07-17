@@ -6,7 +6,7 @@
     color: $dark;
     background: $light;
     font-family: $primary;
-    box-shadow: 0 2px 4px rgba($dark, 0.15);
+    box-shadow: $bs-1;
     cursor: pointer;
     
     @include flex-center;

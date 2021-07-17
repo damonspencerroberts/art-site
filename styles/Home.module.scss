@@ -1,7 +1,7 @@
 @import "../styles/globals.scss";
 
 .Home {
-  padding: 20px;
+  padding: 20px 100px;
 }
 
 .BannerContainer {
@@ -21,6 +21,11 @@
 
 .BannerButton {
   width: 50%;
+}
+
+.ImgContainer {
+  height: 320px;
+  width: 320px;
 }
 
 @media screen and (max-width: 600px) {

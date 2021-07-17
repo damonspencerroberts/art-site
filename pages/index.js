@@ -1,4 +1,6 @@
+import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import Banner from '../components/Banner';
 import Navbar from '../components/Navbar';
 import Text from '../components/Text';
@@ -7,6 +9,10 @@ import styles from '../styles/Home.module.scss';
 import Header from '../components/Header';
 import Container from '../components/Container';
 import Button from '../components/Button';
+import { Col, Row } from 'react-bootstrap';
+import First from '../public/img/first.jpeg';
+import Second from '../public/img/second.jpeg';
+import Third from '../public/img/third.jpeg';
 
 export default function Home() {
   return (
@@ -28,6 +34,37 @@ export default function Home() {
       </Banner>
       <Container variant="center">
         <Header fontSize={36}>Featured Work</Header>
+      </Container>
+      <Container style={{padding: '20px 10px'}}>
+        <Row>
+          <Col md={4} className="d-flex align-items-center justify-content-center">
+            <Image
+              alt="img-1"
+              height={320}
+              width={360}
+              src={First}
+            />
+          </Col>
+          <Col md={4} className="d-flex align-items-center justify-content-center">
+            <Image
+              alt="img-2"
+              height={320}
+              width={360}
+              src={Second}
+            />
+          </Col>
+          <Col md={4} className="d-flex align-items-center justify-content-center">
+            <Image
+              alt="img-3"
+              height={320}
+              width={360}
+              src={Third}
+            />
+          </Col>
+        </Row>
+      </Container>
+      <Container variant="center">
+        <Button variant="primary">See More</Button>
       </Container>
     </div>
   );
