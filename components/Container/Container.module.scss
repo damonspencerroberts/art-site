@@ -1,0 +1,6 @@
+@import "../../styles/globals.scss";
+
+.Center {
+    @include flex-center;
+    padding: 10px;
+}

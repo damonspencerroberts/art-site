@@ -8,22 +8,22 @@ function Navbar(props) {
   return (
     <div className={styles.Container}>
       <div className={styles.Logo}>
-        <Header content="Clive Roberts" fontSize={36} />
+        <Header fontSize={36}>Clive Roberts</Header>
       </div>
       <div className={styles.Links}>
         <Link href="/portfolio">
           <a>
-            <Header content="Portfolio" />
+            <Header>Portfolio</Header>
           </a>
         </Link>
         <Link href="/about">
           <a>
-            <Header content="About" />
+            <Header>About</Header>
           </a>
         </Link>
         <Link href="/contact">
           <a>
-            <Header content="Contact" />
+            <Header>Header</Header>
           </a>
         </Link>
       </div>

@@ -1,0 +1,29 @@
+@import "../../styles/globals.scss";
+
+.Button {
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: $dark;
+    background: $light;
+    font-family: $primary;
+    box-shadow: 0 2px 4px rgba($dark, 0.15);
+    cursor: pointer;
+    
+    @include flex-center;
+}
+
+.Button:hover {
+    opacity: 0.8;
+    transition: opacity .4s;
+}
+
+.Primary {
+    color: $light;
+    background: $site;
+}
+
+.Secondary {
+    background: transparent;
+    border: 1px solid $light;
+    color: $light;
+}
