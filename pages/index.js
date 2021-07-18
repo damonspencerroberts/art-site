@@ -9,12 +9,14 @@ import styles from '../styles/Home.module.scss';
 import Header from '../components/Header';
 import Container from '../components/Container';
 import Button from '../components/Button';
+import { axiosAirTable } from '../public/Axios';
 import { Col, Row } from 'react-bootstrap';
 import demo from '../public/Demo/demo';
 import PhotoGrid from '../components/PhotoGrid';
 import usePhotoGrid from '../hooks/usePhotoGrid';
 
-export default function Home() {
+export default function Home({ paintings }) {
+  console.log(paintings);
   const { isOpen, handleIsOpen } = usePhotoGrid();
   return (
     <div className={styles.Home}>
@@ -28,7 +30,7 @@ export default function Home() {
       <Banner>
         <Container classnames={styles.BannerContainer}>
           <Text color={light2} fontSize={28} classnames={styles.BannerText}>
-            I am an Australian artist born in 1955 residing in the country side of France.
+            {demo.homepage.description}
           </Text>
           <Button classnames={styles.BannerButton}>Learn More</Button>
         </Container>
@@ -37,11 +39,27 @@ export default function Home() {
         <Header fontSize={36}>Featured Work</Header>
       </Container>
       <Container style={{ padding: '20px 10px' }}>
-        <PhotoGrid images={demo.slice(0, 3)} isOpen={isOpen} handleIsOpen={handleIsOpen} />
+        <PhotoGrid
+          images={demo.paintings.slice(0, 3)}
+          isOpen={isOpen}
+          handleIsOpen={handleIsOpen}
+        />
       </Container>
       <Container variant="center">
         <Button variant="primary">See More</Button>
       </Container>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const paintings = await axiosAirTable
+    .get('/appX2ycFLtWmCcHVb/Table%201')
+    .then((res) => res.data.records);
+
+  return {
+    props: {
+      paintings,
+    },
+  };
 }

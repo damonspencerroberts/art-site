@@ -30,14 +30,12 @@ function Portfolio(props) {
         <Header fontSize={36}>My Portfolio</Header>
       </Container>
       <Container>
-        {groupBy(demo, 3).map((subArr, i) => {
+        {groupBy(demo.paintings, 3).map((subArr, i) => {
           return <PhotoGrid key={i} images={subArr} isOpen={isOpen} handleIsOpen={handleIsOpen} />;
         })}
       </Container>
     </div>
   );
 }
-
-Portfolio.propTypes = {};
 
 export default Portfolio;
