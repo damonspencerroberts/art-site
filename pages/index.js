@@ -12,8 +12,10 @@ import Button from '../components/Button';
 import { Col, Row } from 'react-bootstrap';
 import demo from '../public/Demo/demo';
 import PhotoGrid from '../components/PhotoGrid';
+import usePhotoGrid from '../hooks/usePhotoGrid';
 
 export default function Home() {
+  const { isOpen, handleIsOpen } = usePhotoGrid();
   return (
     <div className={styles.Home}>
       <Head>
@@ -35,7 +37,7 @@ export default function Home() {
         <Header fontSize={36}>Featured Work</Header>
       </Container>
       <Container style={{ padding: '20px 10px' }}>
-        <PhotoGrid images={demo.slice(0, 3)} />
+        <PhotoGrid images={demo.slice(0, 3)} isOpen={isOpen} handleIsOpen={handleIsOpen} />
       </Container>
       <Container variant="center">
         <Button variant="primary">See More</Button>

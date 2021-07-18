@@ -7,28 +7,26 @@ import { AnimateSharedLayout, motion } from 'framer-motion';
 import styles from './PhotoGrid.module.scss';
 import usePhotoGrid from '../../hooks/usePhotoGrid';
 
-function PhotoGrid({ images }) {
-  const { isOpen, handleIsOpen } = usePhotoGrid();
-
+function PhotoGrid({ images, isOpen, handleIsOpen }) {
   const imageDisplay = (
     <AnimateSharedLayout>
       {images.map((e, i) => {
         return (
           <Col key={i} md={4} className="d-flex align-items-center justify-content-center">
             <motion.div layout>
-              {isOpen !== i && (
+              {isOpen !== e.id && (
                 <Image
                   height={320}
                   width={360}
                   alt={e.alt}
                   src={e.src}
-                  onClick={() => handleIsOpen(i)}
+                  onClick={() => handleIsOpen(e.id)}
                   className={styles.Image}
                 />
               )}
             </motion.div>
             <motion.div layout>
-              {isOpen == i && <PhotoCard cardDetails={e.card} onClick={() => handleIsOpen(null)} />}
+              {isOpen == e.id && <PhotoCard cardDetails={e.card} onClick={() => handleIsOpen(null)} />}
             </motion.div>
           </Col>
         );
@@ -40,6 +38,8 @@ function PhotoGrid({ images }) {
 
 PhotoGrid.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string),
+  isOpen: PropTypes.number,
+  handleIsOpen: PropTypes.func,
 };
 
 export default PhotoGrid;

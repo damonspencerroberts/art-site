@@ -6,8 +6,11 @@ import Header from '../../components/Header';
 import Container from '../../components/Container';
 import PhotoGrid from '../../components/PhotoGrid';
 import demo from '../../public/Demo/demo';
+import usePhotoGrid from '../../hooks/usePhotoGrid';
 
 function Portfolio(props) {
+  const { isOpen, handleIsOpen } = usePhotoGrid();
+
   const groupBy = (list, n) => {
     const res = [];
     if (list != null) {
@@ -28,7 +31,7 @@ function Portfolio(props) {
       </Container>
       <Container>
         {groupBy(demo, 3).map((subArr, i) => {
-          return <PhotoGrid key={i} images={subArr} />
+          return <PhotoGrid key={i} images={subArr} isOpen={isOpen} handleIsOpen={handleIsOpen} />;
         })}
       </Container>
     </div>

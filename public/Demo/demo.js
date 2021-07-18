@@ -1,5 +1,6 @@
 const demo = [
   {
+    id: 1,
     src: 'https://res.cloudinary.com/dbnbgywbw/image/upload/v1626605033/marjan-blan-marjanblan-b7fa7iUVJ7I-unsplash_darclz.jpg',
     alt: 'photo-1',
     card: {
@@ -11,6 +12,7 @@ const demo = [
     },
   },
   {
+    id: 2,
     src: 'https://res.cloudinary.com/dbnbgywbw/image/upload/v1626605035/matze-bob-3vXxcVX_heQ-unsplash_uzeydr.jpg',
     alt: 'photo-2',
     card: {
@@ -22,6 +24,7 @@ const demo = [
     },
   },
   {
+    id: 3,
     src: 'https://res.cloudinary.com/dbnbgywbw/image/upload/v1626605044/steve-johnson-b5HMwgoU2h4-unsplash_iqg5sw.jpg',
     alt: 'photo-3',
     card: {
@@ -33,6 +36,7 @@ const demo = [
     },
   },
   {
+    id: 4,
     src: 'https://res.cloudinary.com/dbnbgywbw/image/upload/v1626605050/mr-tt-xb0wLfZH9Zo-unsplash_ljdyvj.jpg',
     alt: 'photo-4',
     card: {
@@ -44,6 +48,7 @@ const demo = [
     },
   },
   {
+    id: 5,
     src: 'https://res.cloudinary.com/dbnbgywbw/image/upload/v1626605055/alexander-ant-r7xdS9hjYYE-unsplash_rbk9os.jpg',
     alt: 'photo-5',
     card: {
@@ -55,6 +60,7 @@ const demo = [
     },
   },
   {
+    id: 6,
     src: 'https://res.cloudinary.com/dbnbgywbw/image/upload/v1626605062/claudio-schwarz-k39RGHmLoV8-unsplash_np7lxg.jpg',
     alt: 'photo-6',
     card: {
