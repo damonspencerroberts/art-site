@@ -38,11 +38,7 @@ export default function Home({ paintings }) {
         <Header fontSize={36}>Featured Work</Header>
       </Container>
       <Container style={{ padding: '20px 10px' }}>
-        <PhotoGrid
-          images={paintings.slice(0, 3)}
-          isOpen={isOpen}
-          handleIsOpen={handleIsOpen}
-        />
+        <PhotoGrid images={paintings.slice(0, 3)} isOpen={isOpen} handleIsOpen={handleIsOpen} />
       </Container>
       <Container variant="center">
         <Button variant="primary">See More</Button>
