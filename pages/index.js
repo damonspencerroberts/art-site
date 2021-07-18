@@ -4,19 +4,20 @@ import Image from 'next/image';
 import Banner from '../components/Banner';
 import Navbar from '../components/Navbar';
 import Text from '../components/Text';
-import { light2 } from '../styles/js-colors';
+import { light2, site } from '../styles/js-colors';
 import styles from '../styles/Home.module.scss';
 import Header from '../components/Header';
 import Container from '../components/Container';
 import Button from '../components/Button';
 import { axiosAirTable } from '../public/Axios';
-import { Col, Row } from 'react-bootstrap';
-import demo from '../public/Demo/demo';
 import PhotoGrid from '../components/PhotoGrid';
 import usePhotoGrid from '../hooks/usePhotoGrid';
 
-export default function Home({ paintings }) {
+export default function Home({ paintings, homePageConfig }) {
+  const { fields } = homePageConfig;
   const { isOpen, handleIsOpen } = usePhotoGrid();
+  const colorText = fields['Text Color'] === 'dark' ? site : light2;
+
   return (
     <div className={styles.Home}>
       <Head>
@@ -28,8 +29,8 @@ export default function Home({ paintings }) {
       <Navbar />
       <Banner>
         <Container classnames={styles.BannerContainer}>
-          <Text color={light2} fontSize={28} classnames={styles.BannerText}>
-            {demo.homepage.description}
+          <Text color={colorText} fontSize={28} classnames={styles.BannerText}>
+            {fields['Description']}
           </Text>
           <Button classnames={styles.BannerButton} href="/about">
             Learn More
@@ -56,9 +57,16 @@ export async function getServerSideProps(context) {
     .get('/appX2ycFLtWmCcHVb/Paintings')
     .then((res) => res.data.records);
 
+  const homePageConfig = await axiosAirTable
+    .get('/appX2ycFLtWmCcHVb/HomePage/recCZFdkzNBUyVbX7')
+    .then((res) => res.data);
+
+  console.log(homePageConfig);
+
   return {
     props: {
       paintings,
+      homePageConfig,
     },
   };
 }
