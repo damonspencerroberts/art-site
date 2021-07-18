@@ -16,7 +16,6 @@ import PhotoGrid from '../components/PhotoGrid';
 import usePhotoGrid from '../hooks/usePhotoGrid';
 
 export default function Home({ paintings }) {
-  console.log(paintings);
   const { isOpen, handleIsOpen } = usePhotoGrid();
   return (
     <div className={styles.Home}>
@@ -40,7 +39,7 @@ export default function Home({ paintings }) {
       </Container>
       <Container style={{ padding: '20px 10px' }}>
         <PhotoGrid
-          images={demo.paintings.slice(0, 3)}
+          images={paintings.slice(0, 3)}
           isOpen={isOpen}
           handleIsOpen={handleIsOpen}
         />

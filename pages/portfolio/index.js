@@ -6,9 +6,10 @@ import Header from '../../components/Header';
 import Container from '../../components/Container';
 import PhotoGrid from '../../components/PhotoGrid';
 import demo from '../../public/Demo/demo';
+import { axiosAirTable } from '../../public/Axios';
 import usePhotoGrid from '../../hooks/usePhotoGrid';
 
-function Portfolio(props) {
+function Portfolio({ paintings }) {
   const { isOpen, handleIsOpen } = usePhotoGrid();
 
   const groupBy = (list, n) => {
@@ -30,7 +31,7 @@ function Portfolio(props) {
         <Header fontSize={36}>My Portfolio</Header>
       </Container>
       <Container>
-        {groupBy(demo.paintings, 3).map((subArr, i) => {
+        {groupBy(paintings, 3).map((subArr, i) => {
           return <PhotoGrid key={i} images={subArr} isOpen={isOpen} handleIsOpen={handleIsOpen} />;
         })}
       </Container>
@@ -39,3 +40,15 @@ function Portfolio(props) {
 }
 
 export default Portfolio;
+
+export async function getServerSideProps(context) {
+  const paintings = await axiosAirTable
+    .get('/appX2ycFLtWmCcHVb/Table%201')
+    .then((res) => res.data.records);
+
+  return {
+    props: {
+      paintings,
+    },
+  };
+}

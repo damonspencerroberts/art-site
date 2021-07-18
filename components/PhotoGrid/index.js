@@ -11,22 +11,31 @@ function PhotoGrid({ images, isOpen, handleIsOpen }) {
   const imageDisplay = (
     <AnimateSharedLayout>
       {images.map((e, i) => {
+        const { fields } = e;
+        const card = {
+          title: fields['Painting Name'],
+          description: fields['Painting Description'],
+          link: fields['Painting Page Link'],
+          year: fields['Painting Year'],
+        };
         return (
           <Col key={i} md={4} className="d-flex align-items-center justify-content-center">
             <motion.div layout>
-              {isOpen !== e.id && (
+              {isOpen !== e['id'] && (
                 <Image
                   height={320}
                   width={360}
-                  alt={e.alt}
-                  src={e.src}
-                  onClick={() => handleIsOpen(e.id)}
+                  alt={fields['Image Alternative Name']}
+                  src={fields['Image Source Url']}
+                  onClick={() => handleIsOpen(e['id'])}
                   className={styles.Image}
                 />
               )}
             </motion.div>
             <motion.div layout>
-              {isOpen == e.id && <PhotoCard cardDetails={e.card} onClick={() => handleIsOpen(null)} />}
+              {isOpen == e['id'] && (
+                <PhotoCard cardDetails={card} onClick={() => handleIsOpen(null)} />
+              )}
             </motion.div>
           </Col>
         );
