@@ -8,6 +8,7 @@ import styles from '../../../styles/PaintingId.module.scss';
 import { Col, Row } from 'react-bootstrap';
 import Header from '../../../components/Header';
 import Text from '../../../components/Text';
+import Button from '../../../components/Button';
 
 function Painting({ painting }) {
   const { fields } = painting;
@@ -41,6 +42,11 @@ function Painting({ painting }) {
           </Col>
         </Row>
       </Container>
+      <Container variant="center">
+        <Button variant="primary" href="/portfolio">
+          My Portfolio
+        </Button>
+      </Container>
     </Container>
   );
 }
@@ -53,7 +59,7 @@ export default Painting;
 
 export async function getStaticPaths() {
   const paintings = await axiosAirTable
-    .get('/appX2ycFLtWmCcHVb/Table%201')
+    .get('/appX2ycFLtWmCcHVb/Paintings')
     .then((res) => res.data.records);
 
   const paths = paintings.map((painting) => ({
@@ -66,7 +72,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { id } = params;
   const painting = await axiosAirTable
-    .get(`/appX2ycFLtWmCcHVb/Table%201/${id}`)
+    .get(`/appX2ycFLtWmCcHVb/Paintings/${id}`)
     .then((res) => res.data);
 
   return { props: { painting } };

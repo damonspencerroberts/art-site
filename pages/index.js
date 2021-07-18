@@ -31,7 +31,9 @@ export default function Home({ paintings }) {
           <Text color={light2} fontSize={28} classnames={styles.BannerText}>
             {demo.homepage.description}
           </Text>
-          <Button classnames={styles.BannerButton}>Learn More</Button>
+          <Button classnames={styles.BannerButton} href="/about">
+            Learn More
+          </Button>
         </Container>
       </Banner>
       <Container variant="center">
@@ -41,7 +43,9 @@ export default function Home({ paintings }) {
         <PhotoGrid images={paintings.slice(0, 3)} isOpen={isOpen} handleIsOpen={handleIsOpen} />
       </Container>
       <Container variant="center">
-        <Button variant="primary">See More</Button>
+        <Button variant="primary" href="/portfolio">
+          My Portfolio
+        </Button>
       </Container>
     </div>
   );
@@ -49,7 +53,7 @@ export default function Home({ paintings }) {
 
 export async function getServerSideProps(context) {
   const paintings = await axiosAirTable
-    .get('/appX2ycFLtWmCcHVb/Table%201')
+    .get('/appX2ycFLtWmCcHVb/Paintings')
     .then((res) => res.data.records);
 
   return {

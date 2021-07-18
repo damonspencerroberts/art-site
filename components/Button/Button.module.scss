@@ -8,6 +8,7 @@
     font-family: $primary;
     box-shadow: $bs-1;
     cursor: pointer;
+    text-decoration: none !important;
     
     @include flex-center;
 }
@@ -15,11 +16,16 @@
 .Button:hover {
     opacity: 0.8;
     transition: opacity .4s;
+    color: $site;
 }
 
 .Primary {
     color: $light-2;
     background: $site;
+
+    &:hover {
+        color: $light-2;
+    }
 }
 
 .Secondary {

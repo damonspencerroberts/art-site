@@ -43,7 +43,7 @@ export default Portfolio;
 
 export async function getServerSideProps(context) {
   const paintings = await axiosAirTable
-    .get('/appX2ycFLtWmCcHVb/Table%201')
+    .get('/appX2ycFLtWmCcHVb/Paintings')
     .then((res) => res.data.records);
 
   return {

@@ -14,7 +14,9 @@ function PhotoCard({ cardDetails, ...props }) {
       </Container>
       <Container classnames={styles.Desc}>{description.slice(0, 150)}...</Container>
       <Container classnames={styles.Btn}>
-        <Button variant="secondary">See More</Button>
+        <Button variant="secondary" href={link} onClick={(e) => e.stopPropagation()}>
+          See More
+        </Button>
       </Container>
     </Container>
   );

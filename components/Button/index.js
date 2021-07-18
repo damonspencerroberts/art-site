@@ -11,7 +11,7 @@ function Button({ classnames, variant, children, ...props }) {
     [styles.Secondary]: variant === 'secondary',
   });
 
-  return <div role="button" className={className} {...props}>{children}</div>;
+  return <a role="button" className={className} {...props}>{children}</a>;
 }
 
 Button.propTypes = {
