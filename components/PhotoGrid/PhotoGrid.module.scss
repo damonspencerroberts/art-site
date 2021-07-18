@@ -1,0 +1,9 @@
+@import '../../styles/globals.scss';
+
+.Image {
+    &:hover {
+        transition: opacity 0.4s;
+        opacity: 0.7;
+        cursor: pointer;
+    }
+}

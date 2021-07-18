@@ -3,8 +3,8 @@
 .Button {
     border-radius: 50px;
     padding: 10px 20px;
-    color: $dark;
-    background: $light;
+    color: $site;
+    background: $light-2;
     font-family: $primary;
     box-shadow: $bs-1;
     cursor: pointer;
@@ -18,12 +18,18 @@
 }
 
 .Primary {
-    color: $light;
+    color: $light-2;
     background: $site;
 }
 
 .Secondary {
     background: transparent;
     border: 1px solid $light;
-    color: $light;
+    color: $light-2;
+
+    &:hover {
+        transition: background .4s;
+        background: $light;
+        color: $site;
+    }
 }

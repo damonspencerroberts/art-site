@@ -1,6 +1,7 @@
-const dark = '#4B4B4B';
-const light = '#F6F7EB';
-const site = '#93827F';
+const dark = '#022D4F';
+const light = '#EEECE8';
+const site = '#61210F';
 const green = '#129490';
+const light2 = '#DCD8D0';
 
-export { dark, light, site, green };
+export { dark, light, site, green, light2 };

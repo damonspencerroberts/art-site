@@ -4,15 +4,13 @@ import Image from 'next/image';
 import Banner from '../components/Banner';
 import Navbar from '../components/Navbar';
 import Text from '../components/Text';
-import { light } from '../styles/js-colors';
+import { light2 } from '../styles/js-colors';
 import styles from '../styles/Home.module.scss';
 import Header from '../components/Header';
 import Container from '../components/Container';
 import Button from '../components/Button';
 import { Col, Row } from 'react-bootstrap';
-import First from '../public/img/first.jpeg';
-import Second from '../public/img/second.jpeg';
-import Third from '../public/img/third.jpeg';
+import PhotoGrid from '../components/PhotoGrid';
 
 export default function Home() {
   return (
@@ -26,7 +24,7 @@ export default function Home() {
       <Navbar />
       <Banner>
         <Container classnames={styles.BannerContainer}>
-          <Text color={light} fontSize={28} classnames={styles.BannerText}>
+          <Text color={light2} fontSize={28} classnames={styles.BannerText}>
             I am an Australian artist born in 1955 residing in the country side of France.
           </Text>
           <Button classnames={styles.BannerButton}>Learn More</Button>
@@ -36,32 +34,7 @@ export default function Home() {
         <Header fontSize={36}>Featured Work</Header>
       </Container>
       <Container style={{padding: '20px 10px'}}>
-        <Row>
-          <Col md={4} className="d-flex align-items-center justify-content-center">
-            <Image
-              alt="img-1"
-              height={320}
-              width={360}
-              src={First}
-            />
-          </Col>
-          <Col md={4} className="d-flex align-items-center justify-content-center">
-            <Image
-              alt="img-2"
-              height={320}
-              width={360}
-              src={Second}
-            />
-          </Col>
-          <Col md={4} className="d-flex align-items-center justify-content-center">
-            <Image
-              alt="img-3"
-              height={320}
-              width={360}
-              src={Third}
-            />
-          </Col>
-        </Row>
+        <PhotoGrid />
       </Container>
       <Container variant="center">
         <Button variant="primary">See More</Button>
