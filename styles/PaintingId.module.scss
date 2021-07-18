@@ -1,0 +1,17 @@
+@import '../styles/globals.scss';
+
+.Main {
+  padding: $main-layout;
+}
+
+.ImageContainer {
+  position: relative;
+  width: 90%;
+  height: 500px;
+}
+
+@media screen and (max-width: 600px) {
+  .ImageContainer {
+    height: 300px;
+  }
+}
