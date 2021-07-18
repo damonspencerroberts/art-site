@@ -23,6 +23,8 @@ function PhotoGrid({ images, isOpen, handleIsOpen }) {
             <motion.div layout>
               {isOpen !== e['id'] && (
                 <Image
+                  placeholder="blur"
+                  blurDataURL={fields['Image Source Url']}
                   height={320}
                   width={360}
                   alt={fields['Image Alternative Name']}
@@ -47,7 +49,7 @@ function PhotoGrid({ images, isOpen, handleIsOpen }) {
 
 PhotoGrid.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string),
-  isOpen: PropTypes.number,
+  isOpen: PropTypes.string,
   handleIsOpen: PropTypes.func,
 };
 

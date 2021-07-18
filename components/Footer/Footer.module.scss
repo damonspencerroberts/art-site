@@ -1,0 +1,25 @@
+@import '../../styles/globals.scss';
+
+.Link {
+  font-family: $primary;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: $site;
+  text-decoration: none;
+  margin: 10px 20px;
+
+  &:hover {
+    transition: opacity 0.4s;
+    opacity: 0.8;
+    color: $site;
+  }
+}
+
+.Copy {
+  font-family: $primary;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  color: $dark;
+}

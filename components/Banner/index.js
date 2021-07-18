@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Banner.module.scss';
 
-function Banner({ children }) {
-  return <div className={styles.Banner}>{children}</div>;
+function Banner({ children, ...props }) {
+  return <div className={styles.Banner} {...props}>{children}</div>;
 }
 
 Banner.propTypes = {

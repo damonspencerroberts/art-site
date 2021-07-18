@@ -9,19 +9,20 @@ import { Col, Row } from 'react-bootstrap';
 import Header from '../../../components/Header';
 import Text from '../../../components/Text';
 import Button from '../../../components/Button';
+import MainLayout from '../../../components/MainLayout';
 
-function Painting({ painting }) {
+function Painting({ painting, footerLinks }) {
   const { fields } = painting;
   console.log(painting);
   return (
-    <Container classnames={styles.Main}>
-      <Navbar />
-
+    <MainLayout footerLinks={footerLinks}>
       <Container classnames="p-5">
         <Row>
           <Col lg={6} className="d-flex align-items-center justify-content-center">
             <Container classnames={styles.ImageContainer}>
               <Image
+                placeholder="blur"
+                blurDataURL={fields['Image Source Url']}
                 layout="fill"
                 objectFit="cover"
                 src={fields['Image Source Url']}
@@ -47,7 +48,7 @@ function Painting({ painting }) {
           My Portfolio
         </Button>
       </Container>
-    </Container>
+    </MainLayout>
   );
 }
 
@@ -75,5 +76,9 @@ export async function getStaticProps({ params }) {
     .get(`/appX2ycFLtWmCcHVb/Paintings/${id}`)
     .then((res) => res.data);
 
-  return { props: { painting } };
+  const footerLinks = await axiosAirTable
+    .get('/appX2ycFLtWmCcHVb/Footer')
+    .then((res) => res.data.records);
+
+  return { props: { painting, footerLinks } };
 }

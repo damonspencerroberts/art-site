@@ -8,8 +8,9 @@ import PhotoGrid from '../../components/PhotoGrid';
 import demo from '../../public/Demo/demo';
 import { axiosAirTable } from '../../public/Axios';
 import usePhotoGrid from '../../hooks/usePhotoGrid';
+import MainLayout from '../../components/MainLayout';
 
-function Portfolio({ paintings }) {
+function Portfolio({ paintings, footerLinks }) {
   const { isOpen, handleIsOpen } = usePhotoGrid();
 
   const groupBy = (list, n) => {
@@ -25,8 +26,7 @@ function Portfolio({ paintings }) {
   };
 
   return (
-    <div className={styles.Portfolio}>
-      <Navbar />
+    <MainLayout footerLinks={footerLinks}>
       <Container variant="center">
         <Header fontSize={36}>My Portfolio</Header>
       </Container>
@@ -35,7 +35,7 @@ function Portfolio({ paintings }) {
           return <PhotoGrid key={i} images={subArr} isOpen={isOpen} handleIsOpen={handleIsOpen} />;
         })}
       </Container>
-    </div>
+    </MainLayout>
   );
 }
 
@@ -46,9 +46,14 @@ export async function getServerSideProps(context) {
     .get('/appX2ycFLtWmCcHVb/Paintings')
     .then((res) => res.data.records);
 
+  const footerLinks = await axiosAirTable
+    .get('/appX2ycFLtWmCcHVb/Footer')
+    .then((res) => res.data.records);
+
   return {
     props: {
       paintings,
+      footerLinks,
     },
   };
 }
