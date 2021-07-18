@@ -10,6 +10,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 import Button from '../components/Button';
 import { Col, Row } from 'react-bootstrap';
+import demo from '../public/Demo/demo';
 import PhotoGrid from '../components/PhotoGrid';
 
 export default function Home() {
@@ -33,8 +34,8 @@ export default function Home() {
       <Container variant="center">
         <Header fontSize={36}>Featured Work</Header>
       </Container>
-      <Container style={{padding: '20px 10px'}}>
-        <PhotoGrid />
+      <Container style={{ padding: '20px 10px' }}>
+        <PhotoGrid images={demo.slice(0, 3)} />
       </Container>
       <Container variant="center">
         <Button variant="primary">See More</Button>
