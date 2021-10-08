@@ -15,9 +15,24 @@ function Navbar(props) {
         </Link>
       </div>
       <div className={styles.Links}>
+        <Link href="/">
+          <a>
+            <Header>Home</Header>
+          </a>
+        </Link>
         <Link href="/portfolio">
           <a>
-            <Header>Portfolio</Header>
+            <Header>Artwork</Header>
+          </a>
+        </Link>
+        <Link href="/commisions">
+          <a>
+            <Header>Commisions</Header>
+          </a>
+        </Link>
+        <Link href="/exhibitions">
+          <a>
+            <Header>Exhibitions</Header>
           </a>
         </Link>
         <Link href="/about">

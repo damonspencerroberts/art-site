@@ -63,7 +63,7 @@ export default function Home({ paintings, homePageConfig, footerLinks }) {
       </Container>
       <Container variant="center">
         <Button variant="primary" href="/portfolio">
-          My Portfolio
+          My Artwork
         </Button>
       </Container>
     </MainLayout>
