@@ -15,6 +15,8 @@ import PhotoGrid from '../components/PhotoGrid';
 import usePhotoGrid from '../hooks/usePhotoGrid';
 import Footer from '../components/Footer';
 import MainLayout from '../components/MainLayout';
+import Card from '../components/Card';
+import { Col, Row } from 'react-bootstrap';
 
 export default function Home({ paintings, homePageConfig, footerLinks }) {
   console.log(footerLinks);
@@ -63,8 +65,26 @@ export default function Home({ paintings, homePageConfig, footerLinks }) {
       </Container>
       <Container variant="center">
         <Button variant="primary" href="/portfolio">
-          My Artwork
+          All My Artwork
         </Button>
+      </Container>
+      <Container style={{ padding: '20px 10px' }}>
+        <Row>
+          <Col>
+            <Card
+              header="Upcoming Exhibitions"
+              text="There are currently no exhibitions scheduled"
+            />
+          </Col>
+          <Col md>
+            <Card
+              header="Request Commision"
+              text="Learn more about how you can request a commision from me"
+              hasButton={true}
+              buttonText="Learn more"
+            />
+          </Col>
+        </Row>
       </Container>
     </MainLayout>
   );

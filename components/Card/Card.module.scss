@@ -1,0 +1,10 @@
+@import "../../styles/globals.scss";
+
+.Card {
+    box-shadow: $bs-1;
+    border: 1px solid $site;
+    border-radius: 6px;
+    background: $light;
+    color: $dark;
+    height: 100%;
+}
