@@ -1,10 +1,9 @@
 /* Colors */
 
-$dark: #022D4F;
-$light: #EEECE8;
-$light-2: #DCD8D0;
-$site: #61210F;
-$green: #129490;
+$dark: #173750;
+$light: #ffffff;
+$site: #1F18C0;
+$green: #12945e;
 
 $bs-1: 0 2px 4px rgba($dark, 0.15);
 $main-layout: 20px 100px;
@@ -12,9 +11,12 @@ $main-layout: 20px 100px;
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
 $header: 'Karla', sans-serif;
 $primary: 'Montserrat', sans-serif;
+$fancy: 'PT Serif', serif;
+
 
 @mixin flex-center {
     display: flex;

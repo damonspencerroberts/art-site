@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import styles from './Header.module.scss';
 
-function Header({ children, fontSize = 20 }) {
+function Header({ children, classnames, fontSize = 20 }) {
   return (
-    <div className={styles.Header} style={{ fontSize: fontSize }}>
+    <div className={cx(styles.Header, classnames)} style={{ fontSize: fontSize }}>
       {children}
     </div>
   );

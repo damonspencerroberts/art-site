@@ -10,39 +10,39 @@ function Navbar(props) {
       <div className={styles.Logo}>
         <Link href="/">
           <a>
-            <Header fontSize={36}>Clive Roberts</Header>
+            <Header classnames={styles.Navlinks}  fontSize={36}>Clive Roberts</Header>
           </a>
         </Link>
       </div>
       <div className={styles.Links}>
         <Link href="/">
           <a>
-            <Header>Home</Header>
+            <Header classnames={styles.Navlinks} >Home</Header>
           </a>
         </Link>
         <Link href="/portfolio">
           <a>
-            <Header>Artwork</Header>
+            <Header classnames={styles.Navlinks} >Artwork</Header>
           </a>
         </Link>
         <Link href="/commisions">
           <a>
-            <Header>Commisions</Header>
+            <Header classnames={styles.Navlinks} >Commisions</Header>
           </a>
         </Link>
         <Link href="/exhibitions">
           <a>
-            <Header>Exhibitions</Header>
+            <Header classnames={styles.Navlinks} >Exhibitions</Header>
           </a>
         </Link>
         <Link href="/about">
           <a>
-            <Header>About</Header>
+            <Header classnames={styles.Navlinks} >About</Header>
           </a>
         </Link>
         <Link href="/contact">
           <a>
-            <Header>Contact</Header>
+            <Header classnames={styles.Navlinks} >Contact</Header>
           </a>
         </Link>
       </div>

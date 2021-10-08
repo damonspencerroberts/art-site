@@ -4,7 +4,7 @@
     border-radius: 50px;
     padding: 10px 20px;
     color: $site;
-    background: $light-2;
+    background: $light;
     font-family: $primary;
     box-shadow: $bs-1;
     cursor: pointer;
@@ -20,18 +20,18 @@
 }
 
 .Primary {
-    color: $light-2;
+    color: $light;
     background: $site;
 
     &:hover {
-        color: $light-2;
+        color: $light;
     }
 }
 
 .Secondary {
     background: transparent;
     border: 1px solid $light;
-    color: $light-2;
+    color: $light;
 
     &:hover {
         transition: background .4s;
